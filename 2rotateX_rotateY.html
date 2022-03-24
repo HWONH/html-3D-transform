@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title> rotateX, rotateY, perspective </title>
+    <style>
+        body, p{margin: 0;padding: 0;}
+        .box{float: left;width: 200px;height: 200px;margin: 100px;border: 1px solid #000;perspective: 400px;}
+        .box p{height: 100%;background: rgba(36, 161, 36,.5);}
+        #box1 p{transform: rotateX(85deg);}
+        #box2 p{transform: rotateY(85deg);}
+        #box3 p{transform: rotateX(45deg);}
+        #box4 p{transform: rotateY(45deg);}
+    </style>
+</head>
+<body>
+    <div class="box" id="box1">
+        <p></p>
+    </div>
+
+    <div class="box" id="box2">
+        <p></p>
+    </div>
+
+    <div class="box" id="box3">
+        <p></p>
+    </div>
+
+    <div class="box" id="box4">
+        <p></p>
+    </div>
+</body>
+</html>
