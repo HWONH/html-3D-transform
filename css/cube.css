@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* tag reset */
+body, figure{margin: 0;padding: 0;}
+a:link, a:visited, a:hover, a:active{text-decoration: none;color: inherit;}
+img{vertical-align: top;}
+
+#wrap{width: 300px;margin: 100px auto;border: 1px solid #000;}
+.card, .card > div{width: 300px;height: 200px;}
+.card{position: relative;margin-bottom: 100px;}
+.card > div{position: absolute;top: 0;left: 0;transition: transform 1s;}
+.card .side{background: #ff5e00;text-align: center;line-height: 200px;color: #ffffff;font-size: 50px;}
+
+/* 수평방향 : Y축을 기준으로 회전
+앞면 : 0도 -> 90도
+측면 : -90도 -> 0도
+translateZ() : 이동할 거리의 절반 만큼을 설정해야 ㄱ자 모양으로 회전 가능함
+300px / 2 =150px
+ */
+#hor .front{transform: rotateY(0deg) translateZ(150px);}
+#hor .side{transform: rotateY(-90deg) translateZ(150px);}
+/* hover, focus => 스크립트 연결 .card.flip를 갖음 */
+#hor:hover .front, #hor.flip .front{transform: rotateY(90deg) translateZ(150px);}
+#hor:hover .side, #hor.flip .side{transform: rotateY(0deg) translateZ(150px);}
+
+/* 수직방향 : X축을 기준으로 회전
+앞면 : 0도 -> 90도
+측면 : -90도 -> 0도
+translateZ() : 이동할 거리의 절반 만큼을 설정해야 ㄱ자 모양으로 회전 가능함
+200px / 2 =100px
+*/
+#ver .front{transform: rotateX(0deg) translateZ(100px);}
+#ver .side{transform: rotateX(-90deg) translateZ(100px);}
+/* hover, focus => 스크립트 연결 .card.flip를 갖음*/
+#ver:hover .front, #ver.flip .front{transform: rotateX(90deg) translateZ(100px);}
+#ver:hover .side, #ver.flip .side{transform: rotateX(0deg) translateZ(100px);}
