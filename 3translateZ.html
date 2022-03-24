@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title> translateZ </title>
+    <style>
+        body, p{margin: 0;padding: 0;}
+
+        .box{position: relative;width: 600px;height: 400px;border: 1px solid #000;margin: 100px auto;perspective: 1500px;}
+        .box p{position: absolute;width: 100%;height: 100%;background: rgba(146, 146, 255, 0.5);font-size: 50px;}
+        #child1{transform: translateZ(500px);}
+        #child2{transform: translateZ(0);}
+        #child3{transform: translateZ(-500px);}
+        /* translateZ : 화면을 바라보는 유저를 기준으로 양수는 앞으로 튀어나와 보이고, 음수는 뒤로 들어가 보인다 */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p id="child1">#child1:500px</p>
+        <p id="child2">#child2:0px</p>
+        <p id="child3">#child3:-500px</p>
+    </div>
+</body>
+</html>
