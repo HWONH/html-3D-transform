@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title> 공간감을 표현하기위해 translateZ </title>
+    <link rel="stylesheet" href="css/perspective2.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.card > div').attr('tabIndex', 0);
+            //키보드 제어 접근성 추가
+            $('.card').on({
+                focusin: function () {
+                    $(this).addClass('flip');
+                },
+                focusout: function () {
+                    $(this).removeClass('flip');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="card" id="hor">
+            <div class="front">
+                <figure>
+                    <figcaption>사이코지만 괜찮아</figcaption>
+                    <img src="images/photo2.jpg" alt="">
+                </figure>
+            </div>
+            <div class="back">
+                <figure>
+                    <figcaption>김수현, 서예지</figcaption>
+                    <img src="images/photo3.jpg" alt="">
+                </figure>
+            </div>
+        </div>
+        <div class="card" id="ver">
+            <div class="front">
+                <figure>
+                    <figcaption>사이코지만 괜찮아</figcaption>
+                    <img src="images/photo2.jpg" alt="">
+                </figure>
+            </div>
+            <div class="back">
+                <figure>
+                    <figcaption>김수현, 서예지</figcaption>
+                    <img src="images/photo3.jpg" alt="">
+                </figure>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
