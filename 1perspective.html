@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title> perspective </title>
+    <style>
+        body, p{margin: 0;padding: 0;}
+        .box{float: left;width: 200px;height: 200px;margin: 100px;border: 1px solid #000;}
+        .box p{height: 100%;background: rgba(255, 192, 203,.5);transform: rotateY(50deg);}
+        #box1{perspective: 150px;}
+        /* #box2{perspective: 0;} */
+        #box3{perspective: 800px;}
+    </style>
+</head>
+<body>
+    <!-- 
+        2D
+        matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
+        translate(x,y)          translate(20px, 20px)
+        translateX(x)
+        translateY(y)
+        scale(x,y)              scale(2, 3) 배수; 단위 없음
+        scaleX(x)
+        scaleY(y)
+        rotate(angle)           rotate(45deg)
+        skew(x-angle,y-angle)   skew(90deg, 45deg)
+        skewX(angle)
+        skewY(angle)
+
+        3D
+        matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)
+        translate3d(x,y,z)
+        translateZ(z)
+        scale3d(x,y,z)
+        scaleZ(z)
+        rotate3d(x,y,z,angle)
+        rotateX(angle)
+        rotateY(angle)
+        rotateZ(angle)
+
+        perspective(n)
+        원근감을 표현함
+        숫자가 적으면 왜곡은 커지고, 숫자가 크면 왜곡은 작아진다
+        중요 : 부모에게 작성(하위요소를 관찰하기 위해 부모요소에 적용)
+
+        transform-style : flat(자식은 3D사용하지 않음-기본) / preserve-3d(자식은 3D사용함);
+        3D변환 요소의 자식요소도 3D를 사용할지 여부
+        중요:부모에게 작성
+
+        backface-visibility : visible(기본) / hidden
+        회전요소의 뒷면을 숨기는 기능
+     -->
+     <div class="box" id="box1"> <!-- 150px -->
+         <p></p>
+     </div>
+     <div class="box" id="box2"> <!-- 0px -->
+         <p></p>
+     </div>
+     <div class="box" id="box3"> <!-- 800px -->
+         <p></p>
+     </div>
+</body>
+</html>
