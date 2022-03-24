@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title> 햄버거버튼 2D transform </title>
+    <style>
+        /* tag reset */
+        body, button{margin: 0;padding: 0;}
+        button{border: none;background: none;cursor: pointer;}
+
+        /* common class */
+        .blind{width: 1px;height: 1px;position: absolute;overflow: hidden;border: 0;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);}
+        .blind2{width: 1px;height: 1px;margin: -1px;overflow: hidden;border: 0;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);display: inline-block;}
+
+        #wrap{width: 200px;margin: 100px auto;}
+        #btn{position: relative;width: 50px;height: 50px;background: pink;}
+        #btn .line{position: absolute;left: 10px;width: 30px;height: 5px;background: #000;border-radius: 10px;transition: all 0.5s;}
+        #btn .top{top: 10px;}
+        #btn .mid{top: 22.5px;}
+        #btn .btm{top: 35px;}
+
+        #btn:hover .mid, #btn:focus .mid{opacity: 0;}
+        #btn:hover .top, #btn:focus .top, #btn:hover .btm, #btn:focus .btm{top: 22.5px;}
+        #btn:hover .top, #btn:focus .top{transform: rotate(45deg);}
+        #btn:hover .btm, #btn:focus .btm{transform: rotate(-45deg);}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <button id="btn" type="button">
+            <span class="blind2">메뉴</span>
+            <span class="line top"></span>
+            <span class="line mid"></span>
+            <span class="line btm"></span>
+        </button>
+    </div>
+</body>
+</html>
